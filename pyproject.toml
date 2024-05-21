@@ -123,7 +123,7 @@ build = { cmd = "hatch build --clean", inputs = [
   "dist/*",
 ], env = { HATCH_CONFIG = "config/hatch.toml" } }
 
-publish-pypi = { cmd = "hatch publish --yes --repo maia", inputs = [
+publish-pypi = { cmd = "hatch publish --yes --repo main", inputs = [
   "dist/*",
   "config/hatch.toml",
 ], depends-on = [
