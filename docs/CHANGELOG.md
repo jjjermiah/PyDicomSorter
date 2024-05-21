@@ -2,6 +2,15 @@
 
 
 
+## v0.4.1 (2024-05-21)
+
+### Fix
+
+* fix: lock ([`9711580`](https://github.com/jjjermiah/PyDicomSorter/commit/9711580d2decb816113b45d0cb44b4b74c26d8d7))
+
+* fix: enforce code upload ([`ba93172`](https://github.com/jjjermiah/PyDicomSorter/commit/ba93172023f9c56eaac91b5f95270d0330e33d4b))
+
+
 ## v0.4.0 (2024-05-21)
 
 ### Feature
