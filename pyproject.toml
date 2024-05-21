@@ -108,8 +108,8 @@ python-semantic-release = ">=8.5.1"
 
 [tool.pixi.feature.release.tasks]
 # Semver task will only work on the main or dev/develop branch (see releaserc.toml:branches)
-semver = 'echo "Next Version is: $(semantic-release -c releaserc.toml version --print)"'
-release = "semantic-release -c releaserc.toml version"
+semver = 'echo "Next Version is: $(semantic-release -c config/releaserc.toml version --print)"'
+release = "semantic-release -c config/releaserc.toml version"
 
 [tool.pixi.feature.build.dependencies]
 hatch = "*"
