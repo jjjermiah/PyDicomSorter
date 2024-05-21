@@ -13,3 +13,19 @@
 [![pixi-badge](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/prefix-dev/pixi/main/assets/badge/v0.json&style=flat-square)](https://github.com/prefix-dev/pixi)
 
 Testing the pydicom library to sort dicom files by patient name and study date.
+
+Designing:
+
+``` bash
+
+dicomsort [options] sourceDir destinationDir/<TARGET_PATTERN>
+
+options:
+
+- [-d, --deleteSource] 
+- [-k, --keepGoing]
+- [-s, --symlink]
+- [-n, --dryRun]
+- [-v, --verbose]
+
+```
