@@ -2,4 +2,4 @@
 
 =============================
 
-A Quick Tool For Sorting Dicom Files
+Testing the pydicom library to sort dicom files by patient name and study date.
