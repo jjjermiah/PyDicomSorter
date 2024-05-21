@@ -74,6 +74,7 @@ depends-on = ["test"]
 # See ruff.toml for the configuration
 [tool.pixi.feature.style.dependencies]
 ruff = "*"
+pre-commit = ">=3.7.1,<3.8"
 
 [tool.pixi.feature.style.tasks.lint]
 cmd = "ruff check --config=config/ruff.toml src"
