@@ -21,7 +21,7 @@ all_dicom_tags: list[str] = [value[4] for key, value in DicomDictionary.items()]
 
 
 def print_dicom_path_tree(path: str, tree: Tree):  # pragma: no cover
-    """Print a tree of the DICOM  path."""
+    """Print a tree of the DICOM path."""
     if not path:
         return
     parts = path.split("/")

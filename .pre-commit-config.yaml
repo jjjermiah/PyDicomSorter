@@ -5,4 +5,4 @@ repos:
         name: Run pixi install
         entry: bash -c 'pixi install & pixi install -e dev & pixi install -e publish'
         language: system
-        files: ^pyproject\.toml$
+        files: ^src/.*\.py$|^pyproject\.toml$
