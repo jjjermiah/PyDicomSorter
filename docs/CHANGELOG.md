@@ -2,6 +2,25 @@
 
 
 
+## v0.5.1 (2024-05-21)
+
+### Chore
+
+* chore: Update pre-commit configuration to include src/.*\.py$ files ([`74082dc`](https://github.com/jjjermiah/PyDicomSorter/commit/74082dc9bcdbed0813da6f14f056a29dbbd0421b))
+
+* chore: Update dependencies and add DICOMSorter class ([`640f409`](https://github.com/jjjermiah/PyDicomSorter/commit/640f409859c60bc3bd5294b09a660a8057360198))
+
+### Fix
+
+* fix: imports ([`ecb459e`](https://github.com/jjjermiah/PyDicomSorter/commit/ecb459e0a6963c5d591f160a3d06303ccc043282))
+
+### Unknown
+
+* update precommit ([`16b1844`](https://github.com/jjjermiah/PyDicomSorter/commit/16b18443cf13eced2c639734cd013bba1bf71d1a))
+
+* update precommit ([`879f5c5`](https://github.com/jjjermiah/PyDicomSorter/commit/879f5c5c6e62cc35c612147012321dead42b8aa7))
+
+
 ## v0.5.0 (2024-05-21)
 
 ### Chore
