@@ -75,8 +75,12 @@ depends-on = ["test"]
 [tool.pixi.feature.style.dependencies]
 ruff = "*"
 
-[tool.pixi.feature.style.tasks.style]
-cmd = "ruff  check --config=config/ruff.toml src"
+[tool.pixi.feature.style.tasks.lint]
+cmd = "ruff check --config=config/ruff.toml src"
+inputs = ["src", "config/ruff.toml"]
+
+[tool.pixi.feature.style.tasks.format]
+cmd = "ruff format --config=config/ruff.toml src"
 inputs = ["src", "config/ruff.toml"]
 
 ############################################## DOCS ################################################

@@ -3,8 +3,11 @@ target-version = "py39"
 output-format = "full"
 line-length = 99
 fix = true
+
 # extend-exclude is used to exclude directories from the flake8 checks
-extend-exclude = ["docs/*", "tests/*", ".pixi/"]
+extend-exclude = ["docs/*", "tests/*", ".pixi/", "src/**/sandbox/*"]
+
+extend-include = []
 
 [lint]
 select = [
@@ -46,4 +49,3 @@ convention = "google"
 quote-style = "single"
 docstring-code-format = true
 docstring-code-line-length = 20
-
