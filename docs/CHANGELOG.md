@@ -2,6 +2,17 @@
 
 
 
+## v0.2.0 (2024-05-21)
+
+### Build
+
+* build(deps): move 1 file and update 2 files ([`419b811`](https://github.com/jjjermiah/PyDicomSorter/commit/419b8114d10869c8d685dd1a2a505107e030c149))
+
+### Feature
+
+* feat: readme update ([`9a171fe`](https://github.com/jjjermiah/PyDicomSorter/commit/9a171fec3e9e03ad94871ea38d18f511b417d072))
+
+
 ## v0.1.0 (2024-05-21)
 
 ### Chore
