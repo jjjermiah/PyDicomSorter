@@ -5,10 +5,10 @@ site_description: Package documentation for PyDicomSorter
 site_author: Jermiah Joseph
 
 # The directory where the documentation files are located
-docs_dir: docs
+docs_dir: ../docs
 
 # The directory where the documentation is built (add to .gitignore if changed)
-site_dir: site
+site_dir: ../site
 
 # Set a list of CSS files (relative to docs_dir) to be included by the theme
 # typically as <link> tags.
