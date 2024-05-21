@@ -5,4 +5,4 @@ repos:
         name: Run pixi install
         entry: bash -c 'pixi install && git add pixi.lock'
         language: system
-        files: ^pixi\.lock$
+        files: ^pyproject\.toml$
