@@ -1,0 +1,129 @@
+#--------------------------------------------------------------------------------------------------#
+######################################### Package Config ###########################################
+#__________________________________________________________________________________________________#
+[project]
+name = "pydicomsorter"
+version = "0.1.0"
+description = "A Quick Tool For Sorting Dicom Files"
+license = "MIT"
+readme = "README.md"
+keywords = ["pydicomsorter", "pixi", "python", "package"]
+
+authors = [{ name = "Jermiah Joseph", email = "jermiahjoseph98@gmail.com" }]
+maintainers = [{ name = "Jermiah Joseph", email = "jermiahjoseph98@gmail.com" }]
+
+requires-python = ">= 3.12"
+dependencies = ["rich", "rich-click", "pydicom"]
+
+[project.urls]
+homepage = "https://github.com/jjjermiah/pydicomsorter"
+repository = "https://github.com/jjjermiah/pydicomsorter"
+documentation = "https://jjjermiah.github.io/pydicomsorter/"
+changelog = "https://github.com/jjjermiah/pydicomsorter/blob/main/docs/CHANGELOG.md"
+issues = "https://github.com/jjjermiah/pydicomsorter/issues"
+
+[project.scripts]
+myscript = "pydicomsorter.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+#--------------------------------------------------------------------------------------------------#
+############################################## PIXI ################################################
+#__________________________________________________________________________________________________#
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "linux-64", "win-64", "osx-64"]
+
+[tool.pixi.dependencies]
+
+[tool.pixi.pypi-dependencies]
+pydicomsorter = { path = ".", editable = true }
+
+[tool.pixi.environments]
+dev = { features = ["test", "style", "docs"], solve-group = "default" }
+publish = { features = ["build", "release"], solve-group = "default" }
+
+############################################## TEST ################################################
+[tool.pixi.feature.test.dependencies]
+pytest = "*"
+pytest-cov = "*"
+pytest-xdist = "*"
+ipykernel = ">=6.29.3,<6.30"
+
+[tool.pixi.feature.test.tasks.test]
+cmd = [
+  "pytest",
+  "--numprocesses=auto",
+  "-s",
+  "--verbose",
+  "--cov=pydicomsorter",
+  "--cov-report=xml:coverage-report/coverage.xml",
+  "--cov-config=coverage.toml",
+]
+inputs = ["src", "tests", "coverage.toml"]
+outputs = ["coverage-report/coverage.xml"]
+
+[tool.pixi.feature.test.tasks.coverage]
+cmd = "coverage report --rcfile=coverage.toml"
+inputs = ["coverage-report/coverage.xml", "coverage.toml"]
+depends-on = ["test"]
+
+
+############################################## STYLE ###############################################
+# See ruff.toml for the configuration
+[tool.pixi.feature.style.dependencies]
+ruff = "*"
+
+[tool.pixi.feature.style.tasks]
+style = { cmd = "ruff check src", inputs = ["src"] }
+
+############################################## DOCS ################################################
+# Available tasks: doc-build, doc-serve, doc-deploy
+
+[tool.pixi.feature.docs.dependencies]
+mkdocs = "*"
+
+[tool.pixi.feature.docs.tasks.doc-build]
+cmd = "mkdocs build -f mkdocs.yaml"
+inputs = ["docs"]
+outputs = ["site"]
+
+[tool.pixi.feature.docs.tasks.doc-serve]
+cmd = "mkdocs serve -f mkdocs.yaml"
+inputs = ["docs"]
+
+[tool.pixi.feature.docs.tasks.doc-deploy]
+cmd = "mkdocs gh-deploy -f mkdocs.yaml --force"
+inputs = ["docs"]
+
+#################################### RELEASE & BUILD ###############################################
+[tool.pixi.feature.release.dependencies]
+python-semantic-release = ">=8.5.1"
+
+[tool.pixi.feature.release.tasks]
+# Semver task will only work on the main or dev/develop branch (see releaserc.toml:branches)
+semver = 'echo "Next Version is: $(semantic-release -c releaserc.toml version --print)"'
+release = "semantic-release -c releaserc.toml version"
+
+[tool.pixi.feature.build.dependencies]
+hatch = "*"
+
+[tool.pixi.feature.build.tasks]
+# Builds the package and publishes it to the test.pypi.org repository
+build = { cmd = "hatch build --clean", inputs = ["src"], outputs = ["dist/*"] }
+
+publish-pypi = { cmd = "hatch publish --yes --repo main", inputs = [
+  "dist/*",
+  "hatch.toml",
+], depends-on = [
+  "build",
+] }
+
+publish-test = { cmd = "hatch publish --yes --repo test", inputs = [
+  "dist/*",
+  "hatch.toml",
+], depends-on = [
+  "build",
+] }
