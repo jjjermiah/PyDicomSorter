@@ -3904,9 +3904,9 @@ packages:
   requires_python: '>=3.7'
 - kind: pypi
   name: pydicomsorter
-  version: 0.1.0
+  version: 0.2.0
   path: .
-  sha256: 306ed0bcf34f747576b94c80a0e5aabd7d5e2ce3ea36ba188d7efb20ba2fe4bd
+  sha256: 7bd03a21756129e8c598cdc67a9a7fd9b66bacdffb3ec8b7b639f62d32e1e5d6
   requires_dist:
   - rich
   - rich-click
