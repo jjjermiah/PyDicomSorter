@@ -71,7 +71,7 @@ inputs = ["coverage-report/coverage.xml", "config/coverage.toml"]
 depends-on = ["test"]
 
 ############################################## STYLE ###############################################
-# See ruff.toml for the configuration
+# See config/ruff.toml for the configuration
 [tool.pixi.feature.style.dependencies]
 ruff = ">=0.4.4"
 pre-commit = ">=3.7.1,<3.8"
@@ -86,7 +86,7 @@ inputs = ["src", "config/ruff.toml"]
 
 ############################################## DOCS ################################################
 # Available tasks: doc-build, doc-serve, doc-deploy
-
+# See config/mkdocs.yaml for the configuration
 [tool.pixi.feature.docs.dependencies]
 mkdocs = "*"
 
