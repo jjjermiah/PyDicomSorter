@@ -41,3 +41,9 @@ known-first-party = ["pydicomsorter"]
 
 [lint.pydocstyle]
 convention = "google"
+
+[format]
+quote-style = "single"
+docstring-code-format = true
+docstring-code-line-length = 20
+

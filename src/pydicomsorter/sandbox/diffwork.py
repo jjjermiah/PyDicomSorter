@@ -5,7 +5,7 @@ from typing import Any, Callable, LiteralString, Optional
 
 from rich.console import Console
 
-valid_words = ["PatientID", "StudyID", "SeriesID"]
+valid_words = ['PatientID', 'StudyID', 'SeriesID']
 
 
 def typo_checker_decorator(func: Callable) -> Callable[..., Any]:
@@ -27,24 +27,24 @@ def print_nice_did_you_mean(original_arg: str, closest_match: Optional[str]) -> 
     """Print a nice message for the user and get user response."""
     console = Console()
     richColors = {
-        "PatientID": "red",
-        "StudyID": "red",
-        "SeriesID": "red",
+        'PatientID': 'red',
+        'StudyID': 'red',
+        'SeriesID': 'red',
     }
     if closest_match:
         console.print(
-            f"\t\tDid you mean: [{richColors[closest_match]}] {closest_match}?",
-            style="bold",
+            f'\t\tDid you mean: [{richColors[closest_match]}] {closest_match}?',
+            style='bold',
         )
-        response = input("Enter y/n: ")
-        if response.lower() == "y":
+        response = input('Enter y/n: ')
+        if response.lower() == 'y':
             # Do something if user selects "y"
-            console.print(f"Processing Fruits: {closest_match}")
+            console.print(f'Processing Fruits: {closest_match}')
         else:
             # Do something if user selects "n"
-            console.print(f"[bold red]Invalid argument[bold red]: {original_arg}", style="bold")
+            console.print(f'[bold red]Invalid argument[bold red]: {original_arg}', style='bold')
     else:
-        console.print(f"[bold red]Invalid argument[bold red]: {original_arg}", style="bold")
+        console.print(f'[bold red]Invalid argument[bold red]: {original_arg}', style='bold')
 
 
 class FruitProcessor:
@@ -55,10 +55,10 @@ class FruitProcessor:
     def process(*fruits: LiteralString) -> str:
         """Process the fruits and return the processed string."""
         print(f"Processing Fruits: {''.join(fruits)}")
-        return "Fruits Processed!"
+        return 'Fruits Processed!'
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     fruit_processor = FruitProcessor()
-    fruit_processor.process("PatientID", "StudyID", "SeriesID")
-    fruit_processor.process("PatientID", "StudyID", "SeriesID", "PatientID", "Stud", "SeriesID")
+    fruit_processor.process('PatientID', 'StudyID', 'SeriesID')
+    fruit_processor.process('PatientID', 'StudyID', 'SeriesID', 'PatientID', 'Stud', 'SeriesID')

@@ -60,24 +60,24 @@ cmd = [
   "--verbose",
   "--cov=pydicomsorter",
   "--cov-report=xml:coverage-report/coverage.xml",
-  "--cov-config=coverage.toml",
+  "--cov-config=config/coverage.toml",
 ]
-inputs = ["src", "tests", "coverage.toml"]
+inputs = ["src", "tests", "config/coverage.toml"]
 outputs = ["coverage-report/coverage.xml"]
 
 [tool.pixi.feature.test.tasks.coverage]
-cmd = "coverage report --rcfile=coverage.toml"
-inputs = ["coverage-report/coverage.xml", "coverage.toml"]
+cmd = "coverage report --rcfile=config/coverage.toml"
+inputs = ["coverage-report/coverage.xml", "config/coverage.toml"]
 depends-on = ["test"]
-
 
 ############################################## STYLE ###############################################
 # See ruff.toml for the configuration
 [tool.pixi.feature.style.dependencies]
 ruff = "*"
 
-[tool.pixi.feature.style.tasks]
-style = { cmd = "ruff check src", inputs = ["src"] }
+[tool.pixi.feature.style.tasks.style]
+cmd = "ruff  check --config=config/ruff.toml src"
+inputs = ["src", "config/ruff.toml"]
 
 ############################################## DOCS ################################################
 # Available tasks: doc-build, doc-serve, doc-deploy

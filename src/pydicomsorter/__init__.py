@@ -2,9 +2,9 @@
 
 from .main import main
 
-version = "0.1.0"
+version = '0.1.0'
 
 __version__ = version
 
 
-__all__ = ["main"]
+__all__ = ['main']

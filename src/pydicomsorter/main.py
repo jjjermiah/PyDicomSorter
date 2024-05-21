@@ -5,7 +5,7 @@ from rich import print
 
 def hello() -> tuple[str, str]:
     """Return a greeting message and an emoji."""
-    return "Hello from pydicomsorter, [bold magenta]World[/bold magenta]!", ":vampire:"
+    return 'Hello from pydicomsorter, [bold magenta]World[/bold magenta]!', ':vampire:'
 
 
 def main() -> None:
@@ -13,5 +13,5 @@ def main() -> None:
     print(*hello())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
