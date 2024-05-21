@@ -2,6 +2,13 @@
 
 
 
+## v0.5.2 (2024-05-21)
+
+### Fix
+
+* fix: add linting options ([`122cca1`](https://github.com/jjjermiah/PyDicomSorter/commit/122cca187f10d95aceb439be4ff3305e6f187d85))
+
+
 ## v0.5.1 (2024-05-21)
 
 ### Chore
