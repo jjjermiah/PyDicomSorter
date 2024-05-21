@@ -85,12 +85,11 @@ class DICOMSorter:
             zip(self.keys, ["{{{0}}}".format(key) for key in self.keys])
         )
         self.new_format = self.format % replacements
-        tree = Tree(
+        self.tree = Tree(
             ":file_folder: BASE_DIR",
             guide_style="bold bright_blue",
         )
-        print_dicom_path_tree(self.new_format, tree)
-        print(tree)
+        print_dicom_path_tree(self.new_format, self.tree)
 
     def validate_keys(self) -> None:
         """Validate the keys."""
@@ -116,18 +115,17 @@ class DICOMSorter:
         """Validate the keys."""
         return [key for key in self.keys if not tag_exists(keyword=key)]
 
-    def __rich__(self) -> Text:
+    def __rich__(self) -> Tree:
         """Rich output."""
-        return Text.assemble(
-            f"Target Pattern: {self.options.targetPattern}\n",
-            f"Format: {self.format}\n",
-            f"Keys: {self.keys}\n",
-        )
+        # return the tree as a rich object
+        return self.tree
 
 
 if "__main__" == __name__:
     options = DICOMSorterOptions(
-        targetPattern="/COLLECTION_ID/%PatientID/%StudyID/{SeriesInstanceUID}",
+        targetPattern="/COLLECTION_ID/%PatientID/%StudyID/{Modality}-{SeriesInstanceUID}/%InstanceNumber.dcm",
     )
     sorter = DICOMSorter(options)
     sorter.validate_keys()
+    print(f"All DICOM tags: {sorter.keys}")
+    print(sorter)
