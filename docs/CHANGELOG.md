@@ -2,6 +2,23 @@
 
 
 
+## v0.5.0 (2024-05-21)
+
+### Chore
+
+* chore: update pre-commit dependency version to &gt;=3.7.1,&lt;3.8 ([`446a5cc`](https://github.com/jjjermiah/PyDicomSorter/commit/446a5ccfc32a34705f0aa234113db32c6296de13))
+
+* chore: remove unused .pypackage-builder-answers.yml file and update README badges ([`bcd0a59`](https://github.com/jjjermiah/PyDicomSorter/commit/bcd0a599bceeaa38fdd29a241992237077aae7f1))
+
+### Feature
+
+* feat: update pre-commit dependency version to &gt;=3.7.1,&lt;3.8 ([`6b57254`](https://github.com/jjjermiah/PyDicomSorter/commit/6b572546a57ca0abec71d1500d10d1e769c40cb0))
+
+### Unknown
+
+* update precommit ([`69584db`](https://github.com/jjjermiah/PyDicomSorter/commit/69584db9521a65ed4348bd7037e1253cc0742bea))
+
+
 ## v0.4.1 (2024-05-21)
 
 ### Fix
