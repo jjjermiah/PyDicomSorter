@@ -2,6 +2,21 @@
 
 
 
+## v0.3.0 (2024-05-21)
+
+### Feature
+
+* feat: move mkdocs config to a config directory ([`7a7cf35`](https://github.com/jjjermiah/PyDicomSorter/commit/7a7cf35561974c3985dfcadf69568c451539bd5f))
+
+### Fix
+
+* fix: docs directory locations ([`7226233`](https://github.com/jjjermiah/PyDicomSorter/commit/72262339b25a85059012ed9570a9c852c3d2d2e7))
+
+* fix: update lockfile ([`d8b8bb7`](https://github.com/jjjermiah/PyDicomSorter/commit/d8b8bb7d2465e7213cfe7b5883104dfcfab6108c))
+
+* fix: pypi publish side ([`7171f26`](https://github.com/jjjermiah/PyDicomSorter/commit/7171f2646a8782f3bfb00c12cfed841f39c665e6))
+
+
 ## v0.2.0 (2024-05-21)
 
 ### Build
