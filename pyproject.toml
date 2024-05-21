@@ -116,18 +116,23 @@ hatch = "*"
 
 [tool.pixi.feature.build.tasks]
 # Builds the package and publishes it to the test.pypi.org repository
-build = { cmd = "hatch build --clean", inputs = ["src"], outputs = ["dist/*"] }
-
-publish-pypi = { cmd = "hatch publish --yes --repo main", inputs = [
+build = { cmd = "hatch build --clean", inputs = [
+  "src",
+  "config/hatch.toml",
+], outputs = [
   "dist/*",
-  "hatch.toml",
+], env = { HATCH_CONFIG = "config/hatch.toml" } }
+
+publish-pypi = { cmd = "hatch publish --yes --repo maia", inputs = [
+  "dist/*",
+  "config/hatch.toml",
 ], depends-on = [
   "build",
-] }
+], env = { HATCH_CONFIG = "config/hatch.toml" } }
 
 publish-test = { cmd = "hatch publish --yes --repo test", inputs = [
   "dist/*",
-  "hatch.toml",
+  "config/hatch.toml",
 ], depends-on = [
   "build",
-] }
+], env = { HATCH_CONFIG = "config/hatch.toml" } }

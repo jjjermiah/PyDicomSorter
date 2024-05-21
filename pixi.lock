@@ -3906,7 +3906,7 @@ packages:
   name: pydicomsorter
   version: 0.1.0
   path: .
-  sha256: 27de04cedeb8eb752896c93c96c3af8abe21820a5de663e2d5011ba1f94cbae5
+  sha256: 306ed0bcf34f747576b94c80a0e5aabd7d5e2ce3ea36ba188d7efb20ba2fe4bd
   requires_dist:
   - rich
   - rich-click
