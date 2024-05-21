@@ -34,7 +34,9 @@ all_dicom_tags: list[str] = [
 ]
 
 
-def build_tree(tree: ttk.Treeview, ds: pydicom.Dataset, parent: str | None = None) -> None:
+def build_tree(
+    tree: ttk.Treeview, ds: pydicom.Dataset, parent: str | None = None
+) -> None:
     """Build out the tree.
 
     Parameters
@@ -48,14 +50,16 @@ def build_tree(tree: ttk.Treeview, ds: pydicom.Dataset, parent: str | None = Non
     """
     # For each DataElement in the current Dataset
     for idx, elem in enumerate(ds):
-        tree_item = tree.insert('', tk.END, text=str(elem))
+        tree_item = tree.insert("", tk.END, text=str(elem))
         if parent:
             tree.move(tree_item, parent, idx)
 
-        if elem.VR == 'SQ':
+        if elem.VR == "SQ":
             # DataElement is a sequence, containing 0 or more Datasets
             for seq_idx, seq_item in enumerate(elem.value):
-                tree_seq_item = tree.insert('', tk.END, text=f'{elem.name} Item {seq_idx + 1}')
+                tree_seq_item = tree.insert(
+                    "", tk.END, text=f"{elem.name} Item {seq_idx + 1}"
+                )
                 tree.move(tree_seq_item, tree_item, seq_idx)
 
                 # Recurse into the sequence item(s)

@@ -13,7 +13,7 @@ authors = [{ name = "Jermiah Joseph", email = "jermiahjoseph98@gmail.com" }]
 maintainers = [{ name = "Jermiah Joseph", email = "jermiahjoseph98@gmail.com" }]
 
 requires-python = ">= 3.12"
-dependencies = ["rich", "rich-click", "pydicom"]
+dependencies = ["rich", "rich-click", "pydicom", "pydantic"]
 
 [project.urls]
 homepage = "https://github.com/jjjermiah/pydicomsorter"
