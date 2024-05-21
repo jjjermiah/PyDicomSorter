@@ -2,6 +2,15 @@
 
 
 
+## v0.4.0 (2024-05-21)
+
+### Feature
+
+* feat: add codecov badge and fix lock ([`00986a8`](https://github.com/jjjermiah/PyDicomSorter/commit/00986a81e0f24c5d67c7c72a29d04888151b2317))
+
+* feat: upload to codecov ([`97ac6bb`](https://github.com/jjjermiah/PyDicomSorter/commit/97ac6bbf1b241ed8afd331188f8d3624cbe087dc))
+
+
 ## v0.3.0 (2024-05-21)
 
 ### Feature
