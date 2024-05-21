@@ -41,6 +41,10 @@ max-complexity = 10
 
 [lint.isort]
 known-first-party = ["pydicomsorter"]
+force-wrap-aliases = true
+combine-as-imports = true
+lines-after-imports = 1
+relative-imports-order = "closest-to-furthest"
 
 [lint.pydocstyle]
 convention = "google"
