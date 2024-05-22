@@ -95,7 +95,7 @@ class DICOMSorter:
         """Validate the keys."""
         invalid_keys: list[str] = self.invalid_keys()
         for key in invalid_keys:
-            self.console.print(f"Invalid key:UID- {key}")
+            self.console.print(f"Invalid key:{key}")
             closest_match = difflib.get_close_matches(key, all_dicom_tags, 3, 0.4)
             if closest_match:
                 self.console.print("Closest matches:")
@@ -123,7 +123,7 @@ class DICOMSorter:
 
 if "__main__" == __name__:
     options = DICOMSorterOptions(
-        targetPattern="/COLLECTION_ID/%PatientID/%StudyID/{Modality}-{SeriesInstanceUID}/%InstanceNumber.dcm",
+        targetPattern="/COLLECTION_ID/%PatientID/%StudyID/{Modalixty}-{SeriesInstanceUID}/%InstanceNumber.dcm",
     )
     sorter = DICOMSorter(options)
     sorter.validate_keys()
