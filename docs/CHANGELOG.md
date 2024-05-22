@@ -2,6 +2,17 @@
 
 
 
+## v0.8.0 (2024-05-22)
+
+### Feature
+
+* feat: add basic cli ([`40fb02b`](https://github.com/jjjermiah/PyDicomSorter/commit/40fb02bebf887223c7436ec3d3eb0319ca7c2397))
+
+### Fix
+
+* fix: lint and format ([`1e8269b`](https://github.com/jjjermiah/PyDicomSorter/commit/1e8269b69f6513adabb90841c5ce2823ddeeb6b9))
+
+
 ## v0.7.0 (2024-05-22)
 
 ### Feature
