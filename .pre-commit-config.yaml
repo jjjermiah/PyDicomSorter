@@ -3,7 +3,7 @@ repos:
     hooks:
       - id: pixi-install
         name: Run pixi install
-        entry: bash -c 'pixi install && pixi install -e dev && pixi install -e publish'
+        entry: bash -c 'pixi install --all'
         language: system
         files: ^src/.*\.py$|^pyproject\.toml$|^pixi\.lock$
       - id: pixi-run-tests
