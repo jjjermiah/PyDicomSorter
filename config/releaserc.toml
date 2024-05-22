@@ -1,5 +1,5 @@
 [semantic_release]
-version_variables = ["src/pydicomsorter/__init__.py:__version__"]
+version_variables = ["src/pydicomsorter/__init__.py:version"]
 version_toml = ["pyproject.toml:project.version"]
 commit_parser = "angular"
 logging_use_named_masks = false

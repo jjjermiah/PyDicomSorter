@@ -15,17 +15,19 @@ Testing the pydicom library to sort dicom files by patient name and study date.
 Designing:
 
 ``` bash
+Usage: dicomsort [OPTIONS] SOURCEDIR DESTINATION_DIR
 
-dicomsort [options] sourceDir destinationDir/<TARGET_PATTERN>
-
-options:
-
-- [-d, --deleteSource]
-- [-k, --keepGoing]
-- [-s, --symlink]
-- [-n, --dryRun]
-- [-v, --verbose]
-
+╭─ Advanced options ───────────────────────────────────────────────────────────────╮
+│ --delete_source  -d    Delete the source files after sorting.                    │
+│ --keep_going     -k    Keep going when an error occurs.                          │
+│ --symlink        -s    Create symbolic links instead of moving files.            │
+│ --dry_run        -n    Do not move or copy files, just print what would be done. │
+╰──────────────────────────────────────────────────────────────────────────────────╯
+╭─ Basic options ──────────────────────────────────────────────────────────────────╮
+│ --verbose        Print verbose output.                                           │
+│ --debug          Print debug output.                                             │
+│ --help     -h    Show this message and exit.                                     │
+╰──────────────────────────────────────────────────────────────────────────────────╯
 ```
 
 <!-- [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuraghazra)](https://github.com/anuraghazra/github-readme-stats)

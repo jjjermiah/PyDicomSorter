@@ -3,13 +3,10 @@
 from .cli import main
 from .io import find_dicom_files
 
-version = '0.1.0'
-
-__version__ = version
-
+version = "0.8.0"
 
 __all__ = [
-    'find_dicom_files',
-    'main',
-    'version',
+    "find_dicom_files",
+    "main",
+    "version",
 ]
