@@ -2,6 +2,13 @@
 
 
 
+## v0.9.1 (2024-05-22)
+
+### Fix
+
+* fix: version variable ([`23843a5`](https://github.com/jjjermiah/PyDicomSorter/commit/23843a5902fc7f88e1b69d3ada3ca4b2a2705c45))
+
+
 ## v0.9.0 (2024-05-22)
 
 ### Feature
