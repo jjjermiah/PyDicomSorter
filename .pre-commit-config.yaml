@@ -5,7 +5,7 @@ repos:
         name: Run pixi install
         entry: bash -c 'pixi install & pixi install -e dev & pixi install -e publish'
         language: system
-        files: ^src/.*\.py$|^pyproject\.toml$
+        files: ^src/.*\.py$|^pyproject\.toml$|^pixi\.lock$
       - id: pixi-run-tests
         name: Run pixi tests
         entry: bash -c 'pixi run test'
