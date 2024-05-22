@@ -1,7 +1,5 @@
 # pydicomsorter
 
-=============================
-
 [![codecov](https://codecov.io/gh/jjjermiah/PyDicomSorter/graph/badge.svg?token=tCcajRIGz9)](https://codecov.io/gh/jjjermiah/PyDicomSorter)
 [![CI-CD](https://github.com/jjjermiah/PyDicomSorter/actions/workflows/main.yaml/badge.svg)](https://github.com/jjjermiah/PyDicomSorter/actions/workflows/main.yaml)
 
@@ -22,7 +20,7 @@ dicomsort [options] sourceDir destinationDir/<TARGET_PATTERN>
 
 options:
 
-- [-d, --deleteSource] 
+- [-d, --deleteSource]
 - [-k, --keepGoing]
 - [-s, --symlink]
 - [-n, --dryRun]
@@ -34,4 +32,4 @@ options:
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=jjjermiah)](https://github.com/jjjermiah/github-readme-stats) -->
 
-[![GitHub Trends SVG](https://api.githubtrends.io/user/svg/jjjermiah/langs)](https://githubtrends.io)
+<!-- [![GitHub Trends SVG](https://api.githubtrends.io/user/svg/jjjermiah/langs)](https://githubtrends.io) -->

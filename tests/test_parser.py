@@ -5,7 +5,7 @@ from pydicomsorter.parser import PatternParser, NoPlaceholdersError
 @pytest.fixture
 def parser():
     return PatternParser()
-  
+
 @pytest.mark.parametrize(
     "target_pattern, expected_fmt, expected_keys",
     [
@@ -32,7 +32,7 @@ def test_parse_none_pattern(parser):
 def test_NoPlaceholdersError():
     with pytest.raises(NoPlaceholdersError):
         raise NoPlaceholdersError()
-      
+
 def test_NoPlaceholdersError_works(parser):
     with pytest.raises(NoPlaceholdersError):
         parser.parse("No placeholders here!")

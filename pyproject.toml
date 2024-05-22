@@ -23,7 +23,7 @@ changelog = "https://github.com/jjjermiah/pydicomsorter/blob/main/docs/CHANGELOG
 issues = "https://github.com/jjjermiah/pydicomsorter/issues"
 
 [project.scripts]
-myscript = "pydicomsorter.main:main"
+dicomsort = "pydicomsorter.cli:main"
 
 
 [build-system]
@@ -70,6 +70,10 @@ outputs = ["coverage-report/coverage.xml"]
 cmd = "coverage report --rcfile=config/coverage.toml"
 inputs = ["coverage-report/coverage.xml", "config/coverage.toml"]
 depends-on = ["test"]
+
+[tool.pixi.feature.test.tasks.validate]
+cmd = "pre-commit run --all-files"
+inputs = ["src/*", "tests/*", "config/*"]
 
 ############################################## STYLE ###############################################
 # See config/ruff.toml for the configuration

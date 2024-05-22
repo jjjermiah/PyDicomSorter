@@ -1,7 +1,7 @@
 """This is a docstring for the public package."""
 
+from .cli import main
 from .io import find_dicom_files
-from .main import main
 
 version = '0.1.0'
 
