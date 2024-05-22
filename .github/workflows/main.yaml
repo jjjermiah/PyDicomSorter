@@ -19,9 +19,7 @@ jobs:
       PIXI_ENV: "dev"
     strategy:
       matrix:
-        # os: [ubuntu-latest]
         os: [ubuntu-latest, macos-latest, macos-14, windows-latest]
-        # python-version: ["3.12", "3.11", "3.10"]
 
     steps:
       - uses: actions/checkout@v4
@@ -32,11 +30,9 @@ jobs:
           environments: ${{ env.PIXI_ENV }}
           pixi-version: v0.22.0
           cache: false
-          # cache-key: pixi-ENV_${{ env.PIXI_ENV }}-
 
       - name: Run pytest
         run: |
-          pixi run which python
           pixi run test
 
       - name: Upload coverage report artifact to be used by Codecov

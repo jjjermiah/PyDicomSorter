@@ -25,6 +25,7 @@ issues = "https://github.com/jjjermiah/pydicomsorter/issues"
 [project.scripts]
 myscript = "pydicomsorter.main:main"
 
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
