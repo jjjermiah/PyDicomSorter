@@ -1,12 +1,9 @@
 """Dicomsort functionality."""
 
 import difflib
-from pathlib import Path
-from pydicomsorter.io import find_dicom_files
 from pydicomsorter.parser import PatternParser
-from pydicomsorter.tags4format import tag_exists, tag_for_keyword
+from pydicomsorter.tags4format import tag_exists, all_dicom_tags
 
-from pydicom._dicom_dict import DicomDictionary
 
 from rich.console import Console
 from rich.highlighter import RegexHighlighter
@@ -16,8 +13,6 @@ from pydantic import BaseModel
 from rich.text import Text
 from rich.tree import Tree
 from rich import print
-
-all_dicom_tags: list[str] = [value[4] for key, value in DicomDictionary.items()]
 
 
 def print_dicom_path_tree(path: str, tree: Tree):  # pragma: no cover

@@ -7,9 +7,7 @@ from typing import List, Match, Pattern, Tuple
 class NoPlaceholdersError(Exception):
     """Custom exception to throw when a pattern is valid but there arent any % or {} in it."""
 
-    def __init__(
-        self, message: str = "No placeholders found in the target pattern."
-    ) -> None:
+    def __init__(self, message: str = 'No placeholders found in the target pattern.') -> None:
         """Initialize the NoPlaceholdersError.
 
         Args:
@@ -33,7 +31,7 @@ class PatternParser:
         Returns:
             Pattern[str]: The compiled regex pattern.
         """
-        return re.compile(r"%([A-Za-z]+)|\{([A-Za-z]+)\}")
+        return re.compile(r'%([A-Za-z]+)|\{([A-Za-z]+)\}')
 
     def replace(self, match: Match[str]) -> str:
         """Replace the match with a formatted string and store the key.
@@ -46,7 +44,7 @@ class PatternParser:
         """
         key = match.group(1) or match.group(2)
         self.keys.append(key)
-        return f"%({key})s"
+        return f'%({key})s'
 
     def parse(self, target_pattern: str) -> Tuple[str, List[str]]:
         """Parse the target pattern to extract keys and create a format string.
@@ -71,7 +69,7 @@ class PatternParser:
             print(keys)
         """
         if not target_pattern:
-            raise ValueError("The target pattern cannot be None or empty.")
+            raise ValueError('The target pattern cannot be None or empty.')
 
         if not self.pattern.search(target_pattern):
             raise NoPlaceholdersError()

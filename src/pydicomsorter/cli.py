@@ -7,22 +7,22 @@ import rich_click as click
 from pydicomsorter.dicomsort import DICOMSorter
 
 click.rich_click.OPTION_GROUPS = {
-    "dicomsort": [
+    'dicomsort': [
         {
-            "name": "Advanced options",
-            "options": ["--delete_source", "--keep_going", "--symlink", "--dry_run"],
+            'name': 'Advanced options',
+            'options': ['--delete_source', '--keep_going', '--symlink', '--dry_run'],
         },
         {
-            "name": "Basic options",
-            "options": ["--verbose", "--debug", "--help"],
+            'name': 'Basic options',
+            'options': ['--verbose', '--debug', '--help'],
         },
     ]
 }
 
 
-@click.command(context_settings={"help_option_names": ["-h", "--help"]})
+@click.command(context_settings={'help_option_names': ['-h', '--help']})
 @click.argument(
-    "sourcedir",
+    'sourcedir',
     type=click.Path(
         exists=True,
         path_type=pathlib.Path,
@@ -31,42 +31,42 @@ click.rich_click.OPTION_GROUPS = {
     ),
 )
 @click.argument(
-    "destination_dir",
+    'destination_dir',
     type=str,
 )
 @click.option(
-    "-d",
-    "--delete_source",
+    '-d',
+    '--delete_source',
     is_flag=True,
-    help="Delete the source files after sorting.",
+    help='Delete the source files after sorting.',
 )
 @click.option(
-    "-k",
-    "--keep_going",
+    '-k',
+    '--keep_going',
     is_flag=True,
-    help="Keep going when an error occurs.",
+    help='Keep going when an error occurs.',
 )
 @click.option(
-    "-s",
-    "--symlink",
+    '-s',
+    '--symlink',
     is_flag=True,
-    help="Create symbolic links instead of moving files.",
+    help='Create symbolic links instead of moving files.',
 )
 @click.option(
-    "-n",
-    "--dry_run",
+    '-n',
+    '--dry_run',
     is_flag=True,
-    help="Do not move or copy files, just print what would be done.",
+    help='Do not move or copy files, just print what would be done.',
 )
 @click.option(
-    "--verbose",
+    '--verbose',
     is_flag=True,
-    help="Print verbose output.",
+    help='Print verbose output.',
 )
 @click.option(
-    "--debug",
+    '--debug',
     is_flag=True,
-    help="Print debug output.",
+    help='Print debug output.',
 )
 def main(
     sourcedir: pathlib.Path,

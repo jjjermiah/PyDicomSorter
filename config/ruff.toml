@@ -5,7 +5,7 @@ line-length = 99
 fix = true
 
 # extend-exclude is used to exclude directories from the flake8 checks
-extend-exclude = ["docs/*", "tests/*", ".pixi/", "src/**/sandbox/*"]
+extend-exclude = ["docs/*", "tests/*", ".pixi/", "src/**/sandbox/*.py"]
 
 extend-include = []
 
