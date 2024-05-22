@@ -2,6 +2,25 @@
 
 
 
+## v0.6.0 (2024-05-22)
+
+### Chore
+
+* chore: Update pydantic-core to version 2.18.2 ([`3934df3`](https://github.com/jjjermiah/PyDicomSorter/commit/3934df3bbef2fefde3c704b01f1d73cf8418464e))
+
+### Ci
+
+* ci: test on multiple platforms ([`da7f026`](https://github.com/jjjermiah/PyDicomSorter/commit/da7f0265c92c2970839208a14a483dd62b6964ee))
+
+### Feature
+
+* feat: add precommit ([`74adc48`](https://github.com/jjjermiah/PyDicomSorter/commit/74adc483ce2df8bd06ff3fc34f9fccfa584c80d7))
+
+* feat: add precommit ([`2e4ad2c`](https://github.com/jjjermiah/PyDicomSorter/commit/2e4ad2cead4ae1b806d38a8e3b7dc90e1245ad49))
+
+* feat: add precommit ([`58eee66`](https://github.com/jjjermiah/PyDicomSorter/commit/58eee66e1c67fcc111a01dd6b9d57330d5c634c1))
+
+
 ## v0.5.2 (2024-05-21)
 
 ### Fix

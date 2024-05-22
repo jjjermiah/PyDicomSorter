@@ -3,7 +3,7 @@
 #__________________________________________________________________________________________________#
 [project]
 name = "pydicomsorter"
-version = "0.5.2"
+version = "0.6.0"
 description = "A Quick Tool For Sorting Dicom Files"
 license = "MIT"
 readme = "README.md"
