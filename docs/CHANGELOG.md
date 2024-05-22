@@ -2,6 +2,21 @@
 
 
 
+## v0.7.0 (2024-05-22)
+
+### Feature
+
+* feat: add pixi lock durin gpre-commit ([`a987074`](https://github.com/jjjermiah/PyDicomSorter/commit/a98707490ebd7d5beca515e0ddd8ec56cf223d13))
+
+### Fix
+
+* fix: update pre-commit with pixi lock ([`73fbad1`](https://github.com/jjjermiah/PyDicomSorter/commit/73fbad1a82fb98a27f34fe53a730bd7464435eaf))
+
+* fix: update pre-commit with pixi lock ([`1b0d911`](https://github.com/jjjermiah/PyDicomSorter/commit/1b0d9112d176342d055aea823e96e51af39492c8))
+
+* fix: update pre-commit with pixi lock ([`71c9aaa`](https://github.com/jjjermiah/PyDicomSorter/commit/71c9aaac7ea0e6c3cc6246a830d0088afa9fd482))
+
+
 ## v0.6.1 (2024-05-22)
 
 ### Fix
