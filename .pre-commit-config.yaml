@@ -3,7 +3,7 @@ repos:
     hooks:
       - id: pixi-install
         name: Run pixi install
-        entry: bash -c 'pixi install --all'
+        entry: bash -c 'pixi install --all && git add pixi.lock'
         language: system
         files: ^src/.*\.py$|^pyproject\.toml$|^pixi\.lock$
       - id: pixi-run-tests
