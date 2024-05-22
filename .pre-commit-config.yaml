@@ -11,3 +11,8 @@ repos:
         entry: bash -c 'pixi run test'
         language: system
         files: ^src/.*\.py$|^pyproject\.toml$
+      - id: pixi-run-lint
+        name: Run pixi lint
+        entry: bash -c 'pixi run lint'
+        language: system
+        files: ^src/.*\.py$|^pyproject\.toml$|^config/ruff\.toml%

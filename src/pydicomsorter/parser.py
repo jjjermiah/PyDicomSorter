@@ -3,7 +3,6 @@
 import re
 from typing import List, Match, Pattern, Tuple
 
-
 # A custom exception to throw when a pattern is valid but there arent any % or {} in it
 class NoPlaceholdersError(Exception):
     """Custom exception to throw when a pattern is valid but there arent any % or {} in it."""

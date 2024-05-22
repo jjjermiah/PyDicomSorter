@@ -3,9 +3,11 @@
 from pydantic import BaseModel
 
 class DICOMSorterOptions(BaseModel):
-    targetPattern: str = "%PatientID/%StudyID-{SeriesID}"
-    deleteSource: bool = False
+    """A Pydantic model for the DICOMSorter options."""
+
+    target_pattern: str = "%PatientID/%StudyID-{SeriesID}"
+    delete_source: bool = False
     symlink: bool = False
-    keepGoing: bool = False
-    dryRun: bool = False
+    keep_going: bool = False
+    dry_run: bool = False
     verbose: bool = False
