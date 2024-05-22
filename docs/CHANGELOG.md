@@ -2,6 +2,17 @@
 
 
 
+## v0.9.0 (2024-05-22)
+
+### Feature
+
+* feat: functioning cli ([`69e5d57`](https://github.com/jjjermiah/PyDicomSorter/commit/69e5d57da188b1161197a040d04477ebb278eeba))
+
+### Fix
+
+* fix: lock ([`ffe0bac`](https://github.com/jjjermiah/PyDicomSorter/commit/ffe0bacd6090a683b20b3b271f9149784b7f5bda))
+
+
 ## v0.8.0 (2024-05-22)
 
 ### Feature
