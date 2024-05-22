@@ -2,6 +2,19 @@
 
 
 
+## v0.6.1 (2024-05-22)
+
+### Fix
+
+* fix: lock ([`3bb9612`](https://github.com/jjjermiah/PyDicomSorter/commit/3bb96126c40d70b82bbffcbd5b3d1a9f12d0c533))
+
+* fix: lock ([`9603cac`](https://github.com/jjjermiah/PyDicomSorter/commit/9603cac4749df2bb5a6809961556adb879e8c3a7))
+
+* fix: lock ([`503ad7a`](https://github.com/jjjermiah/PyDicomSorter/commit/503ad7ac8e66eb748c61eaef56a2c8e7d83634db))
+
+* fix: some formatting ([`59d3f28`](https://github.com/jjjermiah/PyDicomSorter/commit/59d3f2882f95dc3dad21e42abff71f31db20a0cc))
+
+
 ## v0.6.0 (2024-05-22)
 
 ### Chore
