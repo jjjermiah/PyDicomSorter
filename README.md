@@ -12,9 +12,10 @@
 
 Testing the pydicom library to sort dicom files by patient name and study date.
 
-> WARNING: This is a work in progress and is not implemented.
+> [!NOTE] none of this works yet
 
 Designing should look like:
+
 
 ``` bash
 Usage: dicomsort [OPTIONS] SOURCEDIR DESTINATION_DIR
