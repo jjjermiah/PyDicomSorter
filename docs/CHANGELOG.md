@@ -2,6 +2,19 @@
 
 
 
+## v0.9.2 (2024-05-23)
+
+### Chore
+
+* chore: Update .gitignore and .github/workflows/main.yaml ([`431fe1a`](https://github.com/jjjermiah/PyDicomSorter/commit/431fe1ac2f4e7fab7d238625a82d4ef3c9a3a691))
+
+### Fix
+
+* fix: typo ([`b94f9f1`](https://github.com/jjjermiah/PyDicomSorter/commit/b94f9f1266ca840cb832640328de8f5e2d780896))
+
+* fix: force use the matrix env ([`1e63f36`](https://github.com/jjjermiah/PyDicomSorter/commit/1e63f36fd1fe2f65e8b7c78dea583156d6490cdc))
+
+
 ## v0.9.1 (2024-05-22)
 
 ### Fix
