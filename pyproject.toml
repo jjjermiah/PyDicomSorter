@@ -31,7 +31,7 @@ changelog = "https://github.com/jjjermiah/pydicomsorter/blob/main/docs/CHANGELOG
 issues = "https://github.com/jjjermiah/pydicomsorter/issues"
 
 [project.scripts]
-dicomsort = "pydicomsorter.cli:main"
+dicomsort = "pydicomsorter.cli:cli"
 
 [build-system]
 requires = ["hatchling"]

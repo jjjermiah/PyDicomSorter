@@ -6,7 +6,7 @@ from pathlib import Path
 from pydicom import dcmread
 from pydicom.errors import InvalidDicomError
 
-async def find_dicom_files(source_dir: Path) -> list[Path]:
+def find_dicom_files(source_dir: Path) -> list[Path]:
     """Find all DICOM files in the source directory."""
     return [file.resolve() for file in source_dir.glob('**/*.dcm') if file.is_file()]
 
@@ -77,8 +77,22 @@ def read_tags(
         val = (
             truncate_uid(str(dicom.get(tag, '')))
             if tag.endswith('UID') and truncate
-            else str(dicom.get(tag, ''))
+            else str(dicom.get(tag, 'UNKOWN'))
         )
+        if val == 'UNKOWN':
+            if (
+                tag == 'InstanceNumber'
+                and dcmread(
+                    file,
+                    specific_tags=['Modality'],
+                    stop_before_pixels=True,
+                ).get('Modality')
+                == 'RTSTRUCT'
+            ):
+                # sometimes the instance number is missing in RTSTRUCT files
+                val = '1'
+            else:
+                print(f'Unknown tag: {tag} in file: {file}')
 
         mydict[tag] = sanitize_file_name(val) if sanitize else val
 

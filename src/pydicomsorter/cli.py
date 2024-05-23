@@ -1,30 +1,53 @@
 """Main module of the package."""
 
 import pathlib
+from shutil import copy
 
 import rich_click as click
 from rich import print, progress
+from rich_click import rich_config
 
 from pydicomsorter.dicomsort import DICOMSorter
-from pydicomsorter.io import find_dicom_files, read_tags
+from pydicomsorter.io import find_dicom_files
+from src.pydicomsorter.file_list import DICOMFileList
+
+click.rich_click.STYLE_COMMANDS_TABLE_COLUMN_WIDTH_RATIO = (1, 2)
 
 click.rich_click.OPTION_GROUPS = {
-    "dicomsort": [
+    'dicomsort': [
         {
-            "name": "Advanced options",
-            "options": ["--delete_source", "--keep_going", "--symlink", "--dry_run"],
+            'name': 'Required options',
+            'options': ['--method'],
         },
         {
-            "name": "Basic options",
-            "options": ["--verbose", "--debug", "--help"],
+            'name': 'Advanced options',
+            'options': ['--dry_run', '--overwrite', '--keep_going'],
+        },
+        {
+            'name': 'Basic options',
+            'options': ['--version', '--verbose', '--debug', '--help'],
         },
     ]
 }
 
 
-@click.command(context_settings={"help_option_names": ["-h", "--help"]})
+def generate_destination_paths(
+    dicom_data: dict[pathlib.Path, dict[str, str]],
+    fmt: str,
+) -> dict[pathlib.Path, pathlib.Path]:
+    """Generate the destination paths for the DICOM files."""
+    return {k: pathlib.Path(fmt % v).resolve() for k, v in dicom_data.items()}
+
+
+@click.command(context_settings={'help_option_names': ['-h', '--help']})
+@click.option(
+    '--method',
+    '-m',
+    type=click.Choice(['move', 'copy', 'link'], case_sensitive=False),
+    required=True,
+)
 @click.argument(
-    "sourcedir",
+    'sourcedir',
     type=click.Path(
         exists=True,
         path_type=pathlib.Path,
@@ -33,153 +56,68 @@ click.rich_click.OPTION_GROUPS = {
     ),
 )
 @click.argument(
-    "destination_dir",
+    'destination_dir',
     type=str,
 )
 @click.option(
-    "-d",
-    "--delete_source",
+    '-n',
+    '--dry_run',
     is_flag=True,
-    help="Delete the source files after sorting.",
+    help='Do not move or copy files, just print what would be done.',
 )
 @click.option(
-    "-k",
-    "--keep_going",
+    '-o',
+    '--overwrite',
     is_flag=True,
-    help="Keep going when an error occurs.",
+    default=False,
+    help='Overwrite files if they already exist.',
+    show_default=True,
 )
 @click.option(
-    "-s",
-    "--symlink",
+    '-k',
+    '--keep_going',
     is_flag=True,
-    help="Create symbolic links instead of moving files.",
+    help='Keep going when an error occurs.',
 )
 @click.option(
-    "-n",
-    "--dry_run",
+    '--verbose',
     is_flag=True,
-    help="Do not move or copy files, just print what would be done.",
+    help='Print verbose output.',
 )
 @click.option(
-    "--verbose",
+    '--debug',
     is_flag=True,
-    help="Print verbose output.",
+    help='Print debug output.',
 )
-@click.option(
-    "--debug",
-    is_flag=True,
-    help="Print debug output.",
-)
-def main(
+@click.version_option()
+@rich_config(help_config={'style_option': 'bold cyan'})
+def cli(
     sourcedir: pathlib.Path,
     destination_dir: str,
-    delete_source: bool,
+    method: str,
     keep_going: bool,
-    symlink: bool,
+    overwrite: bool,
     dry_run: bool,
     verbose: bool,
     debug: bool,
 ) -> None:
-    """Main function of the package.
+    """Main function of the package."""
+    import timeit
 
-    pixi run dicomsort data data/test/%PatientID/%StudyInstanceUID-%Modality/%InstanceNumber.dcm
-    """
-    import asyncio
+    start = timeit.default_timer()
 
-    asyncio.run(
-        _main(
-            sourcedir,
-            destination_dir,
-            delete_source,
-            keep_going,
-            symlink,
-            dry_run,
-            verbose,
-            debug,
-        )
-    )
-
-
-async def read_tags_sequentially(
-    files: list[pathlib.Path], tags: list[str]
-) -> dict[pathlib.Path, dict[str, str]]:
-    """Read the specified tags from the DICOM files sequentially."""
-    dicom_data = {}
-    for file in files:
-        dicom_data[file] = read_tags(file, tags)
-
-    return dicom_data
-
-
-class DICOMFileList:
-    """A class to handle and manipulate a list of paths to dicom files."""
-
-    def __init__(self, files: list[pathlib.Path]) -> None:
-        """Initialize the class."""
-        self.files: list[pathlib.Path] = files
-        self.dicom_data: dict[pathlib.Path, dict[str, str]] = {}
-
-    def read_tags(self, tags: list[str]) -> "DICOMFileList":
-        """Read the specified tags from the DICOM files."""
-        with progress.Progress(
-            "[progress.description]{task.description}",
-            progress.BarColumn(),
-            "[progress.percentage]{task.percentage:>3.0f}%",
-            progress.MofNCompleteColumn(),
-            "Time elapsed:",
-            progress.TimeElapsedColumn(),
-            "Time remaining:",
-            progress.TimeRemainingColumn(compact=True),
-            refresh_per_second=10,  # bit slower updates
-        ) as progress2:
-            task = progress2.add_task("Reading DICOM tags...", total=len(self.files))
-            for file in self.files:
-                self.dicom_data[file] = read_tags(file, tags)
-                progress2.update(task, advance=1)
-        return self
-
-    def summarize(self, tags: list[str]) -> None:
-        """Summarize the data.
-
-        For each tag in the data, print the number of unique values.
-        """
-        unique_tag_count: dict[str, set[str]] = {}
-        for tag in tags:
-            unique_values = {dicom_data[tag] for dicom_data in self.dicom_data.values()}
-            unique_tag_count[tag] = unique_values
-
-        for tag, unique_values in unique_tag_count.items():
-            print(f"Tag: {tag} has {len(unique_values)} unique values.")
-
-
-async def _main(
-    sourcedir: pathlib.Path,
-    destination_dir: str,
-    delete_source: bool,
-    keep_going: bool,
-    symlink: bool,
-    dry_run: bool,
-    verbose: bool,
-    debug: bool,
-) -> None:
-    """Main function of the package.
-
-    pixi run dicomsort data data/test/%PatientID/%StudyInstanceUID-%Modality/%InstanceNumber.dcm
-    """
     # run find_dicom_files asynchronously
-    files: list[pathlib.Path] = await find_dicom_files(source_dir=sourcedir)
-    files = files[:10]
-    print(f"Found {len(files)} DICOM files.")
+    files: list[pathlib.Path] = find_dicom_files(source_dir=sourcedir)
+    print(f'Found {len(files)} DICOM files.')
 
     # # other code here
     try:
-        sorter: DICOMSorter = DICOMSorter(
-            destination_dir=destination_dir
-        ).validate_keys()
+        sorter = DICOMSorter(destination_dir).validate_keys()
 
-        print(f"Keys to use: {sorter.keys}")
-    except ValueError:
+    except ValueError as ve:
+        print(f'Error: {ve}')
         return
+    print(f'Keys to use: {sorter.keys}')
 
     file_list: DICOMFileList = DICOMFileList(files).read_tags(sorter.keys)
 
@@ -187,7 +125,38 @@ async def _main(
         file_list.summarize(sorter.keys)
         return
 
-    for k, v in list(file_list.dicom_data.items())[:5]:
-        formatted: str = sorter.format % v
-        print(f"[bold green]{k}[/bold green]")
-        print(f"[bold blue]{pathlib.Path(formatted).resolve()}[/bold blue]")
+    destination_paths = generate_destination_paths(file_list.dicom_data, sorter.format)
+
+    print(destination_paths.__len__())
+
+    execute_method(method, destination_paths)
+
+    print(f'Time: {timeit.default_timer() - start}')
+
+
+
+def execute_method(method: str, destination_paths: dict[pathlib.Path, pathlib.Path]) -> None:
+    """Execute the method on the destination paths."""
+    with progress.Progress(
+        '[progress.description]{task.description}',
+        progress.BarColumn(),
+        '[progress.percentage]{task.percentage:>3.0f}%',
+        progress.MofNCompleteColumn(),
+        'Time elapsed:',
+        progress.TimeElapsedColumn(),
+        'Time remaining:',
+        progress.TimeRemainingColumn(compact=True),
+        refresh_per_second=10,  # bit slower updates
+    ) as progress2:
+        task = progress2.add_task('Executing method...', total=len(destination_paths))
+        for source, destination in destination_paths.items():
+            if not destination.parent.exists():
+                destination.parent.mkdir(parents=True)
+            if method == 'move':
+                source.rename(destination)
+            elif method == 'copy':
+                copy(source, destination)
+            elif method == 'link':
+                destination.symlink_to(source)
+            progress2.update(task, advance=1)
+    return None
