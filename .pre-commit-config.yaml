@@ -16,7 +16,7 @@ repos:
         name: Run pixi install
         entry: bash -c 'pixi install --all && git add pixi.lock'
         language: system
-        files: ^src/pydicomsorter/.*\.py$|^pyproject\.toml$|^pixi\.lock$
+        files: .+
       # - id: pixi-run-tests
       #   name: Run pixi tests
       #   entry: bash -c 'pixi run test'
