@@ -2,6 +2,21 @@
 
 
 
+## v0.10.0 (2024-05-23)
+
+### Chore
+
+* chore: Update Pixi dependency to v0.8.0 ([`4ac2183`](https://github.com/jjjermiah/PyDicomSorter/commit/4ac21833fea48486cfcedd21627347068105a57f))
+
+* chore: Update pixi.lock file ([`db31aee`](https://github.com/jjjermiah/PyDicomSorter/commit/db31aee45531d69faaa4731401454af525b2bc5a))
+
+* chore: Update classifiers in pyproject.toml ([`3d73a96`](https://github.com/jjjermiah/PyDicomSorter/commit/3d73a968318c76599f3a969f4b565d1281a4939b))
+
+### Feature
+
+* feat: docs ([`7aca8a8`](https://github.com/jjjermiah/PyDicomSorter/commit/7aca8a8def2fa94952f0b5488433ed35337416e7))
+
+
 ## v0.9.2 (2024-05-23)
 
 ### Chore
