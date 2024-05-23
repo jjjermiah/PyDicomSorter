@@ -17,7 +17,7 @@ Testing the pydicom library to sort dicom files by patient name and study date.
 
 Designing should look like:
 
-![Command output](./assets/help.svg)
+![Command output](./assets/help.png)
 
 # DICOM data model
 
