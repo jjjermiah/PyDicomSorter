@@ -8,8 +8,8 @@ from rich import print, progress
 from rich_click import rich_config
 
 from pydicomsorter.dicomsort import DICOMSorter
+from pydicomsorter.file_list import DICOMFileList
 from pydicomsorter.io import find_dicom_files
-from src.pydicomsorter.file_list import DICOMFileList
 
 click.rich_click.STYLE_COMMANDS_TABLE_COLUMN_WIDTH_RATIO = (1, 2)
 
