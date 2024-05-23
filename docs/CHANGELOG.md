@@ -2,6 +2,17 @@
 
 
 
+## v0.11.0 (2024-05-23)
+
+### Chore
+
+* chore: Update import statement in cli.py ([`3d6a82e`](https://github.com/jjjermiah/PyDicomSorter/commit/3d6a82e229c5a9f24a22f5a8e939f5bbf5308124))
+
+### Feature
+
+* feat: add method fxnality ([`39067a4`](https://github.com/jjjermiah/PyDicomSorter/commit/39067a456baee48285a6e9133c101957c2d17944))
+
+
 ## v0.10.0 (2024-05-23)
 
 ### Chore
