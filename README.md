@@ -12,7 +12,9 @@
 
 Testing the pydicom library to sort dicom files by patient name and study date.
 
-Designing:
+> WARNING: This is a work in progress and is not implemented.
+
+Designing should look like:
 
 ``` bash
 Usage: dicomsort [OPTIONS] SOURCEDIR DESTINATION_DIR
@@ -28,6 +30,18 @@ Usage: dicomsort [OPTIONS] SOURCEDIR DESTINATION_DIR
 │ --debug          Print debug output.                                             │
 │ --help     -h    Show this message and exit.                                     │
 ╰──────────────────────────────────────────────────────────────────────────────────╯
+```
+
+# DICOM data model
+
+A Patient has one or more Studies, a Study has one or more Series, and a Series has one or more Instances.
+
+```mermaid
+graph TD
+    A[Patient] --> B(Study)
+    B --> C(Series)
+    C --> D(Instance)
+
 ```
 
 <!-- [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuraghazra)](https://github.com/anuraghazra/github-readme-stats)

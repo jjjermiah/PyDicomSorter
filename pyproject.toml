@@ -12,7 +12,7 @@ keywords = ["pydicomsorter", "pixi", "python", "package"]
 authors = [{ name = "Jermiah Joseph", email = "jermiahjoseph98@gmail.com" }]
 maintainers = [{ name = "Jermiah Joseph", email = "jermiahjoseph98@gmail.com" }]
 
-requires-python = ">= 3.12"
+requires-python = ">= 3.10"
 dependencies = ["rich", "rich-click", "pydicom", "pydantic"]
 
 [project.urls]
@@ -24,7 +24,6 @@ issues = "https://github.com/jjjermiah/pydicomsorter/issues"
 
 [project.scripts]
 dicomsort = "pydicomsorter.cli:main"
-
 
 [build-system]
 requires = ["hatchling"]
@@ -43,8 +42,21 @@ platforms = ["osx-arm64", "linux-64", "win-64", "osx-64"]
 pydicomsorter = { path = ".", editable = true }
 
 [tool.pixi.environments]
+
 dev = { features = ["test", "style", "docs"], solve-group = "default" }
 publish = { features = ["build", "release"], solve-group = "default" }
+py310 = ["py310", "test"]
+py311 = ["py311", "test"]
+py312 = ["py312", "test"]
+
+############################################## python ###############################################
+
+[tool.pixi.feature.py310.dependencies]
+python = "3.10.*"
+[tool.pixi.feature.py311.dependencies]
+python = "3.11.*"
+[tool.pixi.feature.py312.dependencies]
+python = "3.12.*"
 
 ############################################## TEST ################################################
 [tool.pixi.feature.test.dependencies]

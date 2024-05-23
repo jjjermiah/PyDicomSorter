@@ -19,22 +19,24 @@ class DICOMSorter:
         self.format, self.keys = PatternParser().parse(destination_dir)
         self.console = Console()
 
-    def validate_keys(self) -> "DICOMSorter":
+    def validate_keys(self) -> 'DICOMSorter':
         """Validate the keys."""
         invalid_keys: list[str] = self.invalid_keys()
+        if not invalid_keys:
+            self.console.print('All keys are valid.')
+            return self
         for key in invalid_keys:
-            self.console.print(f"Invalid key:{key}")
+            self.console.print(f'Invalid key:{key}')
             closest_match = difflib.get_close_matches(key, all_dicom_tags, 3, 0.4)
             if closest_match:
-                self.console.print("Closest matches:")
+                self.console.print('Closest matches:')
                 [
-                    self.console.print(f"\t[bold cyan]{match}[/bold cyan]")
+                    self.console.print(f'\t[bold cyan]{match}[/bold cyan]')
                     for match in closest_match
                 ]
             else:
-                self.console.print("No close match found.")
-
-        return self
+                self.console.print('No close match found.')
+        raise ValueError('Invalid keys found.')
 
     def invalid_keys(self) -> list[str]:
         """Validate the keys."""
