@@ -2,6 +2,17 @@
 
 
 
+## v0.12.0 (2024-05-23)
+
+### Feature
+
+* feat: add screenshot ([`4d25040`](https://github.com/jjjermiah/PyDicomSorter/commit/4d250400ddf05c1f21aceea74b2754a3a3dadcfe))
+
+### Fix
+
+* fix: lock ([`0f9a18e`](https://github.com/jjjermiah/PyDicomSorter/commit/0f9a18e14a1a7447ee7f7bc0468b3a97cc36b99d))
+
+
 ## v0.11.0 (2024-05-23)
 
 ### Chore
