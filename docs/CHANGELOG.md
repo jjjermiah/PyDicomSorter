@@ -2,6 +2,17 @@
 
 
 
+## v0.14.0 (2024-05-24)
+
+### Feature
+
+* feat: Update pydantic-core dependency to version 2.18.2 ([`1bee598`](https://github.com/jjjermiah/PyDicomSorter/commit/1bee598f723cb12b3c946850ca48551d7d7238b0))
+
+* feat: Add validation for DICOM keys in DICOMSorter
+
+The `DICOMSorter` class now includes a `validate_keys` method that validates the keys used for sorting DICOM files. If any invalid keys are found, an error is raised. The method also provides suggestions for closest matches to the invalid keys. This improves the reliability and accuracy of the sorting process. ([`3a80573`](https://github.com/jjjermiah/PyDicomSorter/commit/3a80573bce437e82c73c715419bdae8447f6dbd1))
+
+
 ## v0.13.0 (2024-05-24)
 
 ### Chore
