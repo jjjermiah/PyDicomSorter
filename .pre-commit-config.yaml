@@ -27,7 +27,6 @@ repos:
         entry: bash -c 'pixi install --all && git add pixi.lock'
         always_run: true
         language: system
-        files: .+
       - id: pixi-run-lint
         name: Run pixi lint
         entry: bash -c 'pixi run lint'
