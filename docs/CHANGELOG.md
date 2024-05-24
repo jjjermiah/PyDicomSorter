@@ -2,6 +2,21 @@
 
 
 
+## v0.13.0 (2024-05-24)
+
+### Chore
+
+* chore: lock ([`8298ebb`](https://github.com/jjjermiah/PyDicomSorter/commit/8298ebbebd5112447b62a0e3ed4e5e6d64e62d0a))
+
+### Feature
+
+* feat: clean up ([`1be893b`](https://github.com/jjjermiah/PyDicomSorter/commit/1be893b84473ac558b4b7a1ff850f6e37f3b7256))
+
+### Unknown
+
+* update precommit ([`1e84963`](https://github.com/jjjermiah/PyDicomSorter/commit/1e84963234e13509d801e4701c9bc6159f07ea3f))
+
+
 ## v0.12.0 (2024-05-23)
 
 ### Feature
