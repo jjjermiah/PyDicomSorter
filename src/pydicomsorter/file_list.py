@@ -6,6 +6,7 @@ from rich import progress
 
 from pydicomsorter.io import read_tags
 
+
 class DICOMFileList:
     """A class to handle and manipulate a list of paths to dicom files."""
 
@@ -26,6 +27,7 @@ class DICOMFileList:
             'Time remaining:',
             progress.TimeRemainingColumn(compact=True),
             refresh_per_second=10,  # bit slower updates
+            transient=True,
         ) as progress2:
             task = progress2.add_task('Reading DICOM tags...', total=len(self.files))
             for file in self.files:

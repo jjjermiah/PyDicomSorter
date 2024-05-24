@@ -12,6 +12,9 @@ repos:
       - id: pretty-format-json
       - id: detect-private-key
       - id: debug-statements
+      # - id: no-commit-to-branch
+      #   always_run: true
+      #   args: ['--branch', 'main']
   - repo: https://github.com/timothycrosley/isort
     rev: 5.13.2
     hooks:
@@ -22,13 +25,9 @@ repos:
       - id: pixi-install
         name: Run pixi install
         entry: bash -c 'pixi install --all && git add pixi.lock'
+        always_run: true
         language: system
         files: .+
-      # - id: pixi-run-tests
-      #   name: Run pixi tests
-      #   entry: bash -c 'pixi run test'
-      #   language: system
-      #   files: ^src/.*\.py$|^pyproject\.toml$
       - id: pixi-run-lint
         name: Run pixi lint
         entry: bash -c 'pixi run lint'

@@ -6,9 +6,10 @@ from pathlib import Path
 from pydicom import dcmread
 from pydicom.errors import InvalidDicomError
 
+
 def find_dicom_files(source_dir: Path) -> list[Path]:
     """Find all DICOM files in the source directory."""
-    return [file.resolve() for file in source_dir.glob('**/*.dcm') if file.is_file()]
+    return [file.resolve() for file in source_dir.glob("**/*.dcm") if file.is_file()]
 
 
 def sanitize_file_name(filename: str) -> str:
@@ -18,13 +19,13 @@ def sanitize_file_name(filename: str) -> str:
     # Define a pattern for disallowed filename characters and their replacements
     disallowed_characters_pattern = re.compile(r'[<>:"/\\|?*\x00-\x1f]')
     # Replace disallowed characters with an underscore
-    sanitized_name = disallowed_characters_pattern.sub('_', filename)
+    sanitized_name = disallowed_characters_pattern.sub("_", filename)
 
     # replace spaces with underscores
-    sanitized_name = sanitized_name.replace(' ', '_')
+    sanitized_name = sanitized_name.replace(" ", "_")
 
     # Remove subsequent underscores
-    sanitized_name = re.sub(r'(_{2,})', '_', sanitized_name)
+    sanitized_name = re.sub(r"(_{2,})", "_", sanitized_name)
 
     return sanitized_name
 
@@ -47,12 +48,12 @@ def read_all(file: Path, tags: list[str]) -> dict[str, str]:
     try:
         dicom = dcmread(file, stop_before_pixels=True)
     except TypeError as te:
-        raise TypeError(f'Type error reading DICOM file: {file}') from te
+        raise TypeError(f"Type error reading DICOM file: {file}") from te
     except InvalidDicomError as ide:
-        raise InvalidDicomError(f'Invalid DICOM file: {file}') from ide
+        raise InvalidDicomError(f"Invalid DICOM file: {file}") from ide
     except ValueError as ve:
-        raise ValueError(f'Value error reading DICOM file: {file}') from ve
-    return {tag: str(dicom.get(tag, '')) for tag in tags}
+        raise ValueError(f"Value error reading DICOM file: {file}") from ve
+    return {tag: str(dicom.get(tag, "")) for tag in tags}
 
 
 def read_tags(
@@ -65,34 +66,34 @@ def read_tags(
     try:
         dicom = dcmread(file, specific_tags=tags, stop_before_pixels=True)
     except TypeError as te:
-        raise TypeError(f'Type error reading DICOM file: {file}') from te
+        raise TypeError(f"Type error reading DICOM file: {file}") from te
     except InvalidDicomError as ide:
-        raise InvalidDicomError(f'Invalid DICOM file: {file}') from ide
+        raise InvalidDicomError(f"Invalid DICOM file: {file}") from ide
     except ValueError as ve:
-        raise ValueError(f'Value error reading DICOM file: {file}') from ve
+        raise ValueError(f"Value error reading DICOM file: {file}") from ve
 
     # for all tags, add to dict, but if ends in UID, then truncateUID
     mydict = {}
     for tag in tags:
         val = (
-            truncate_uid(str(dicom.get(tag, '')))
-            if tag.endswith('UID') and truncate
-            else str(dicom.get(tag, 'UNKOWN'))
+            truncate_uid(str(dicom.get(tag, "")))
+            if tag.endswith("UID") and truncate
+            else str(dicom.get(tag, "UNKOWN"))
         )
-        if val == 'UNKOWN':
+        if val == "UNKOWN":
             if (
-                tag == 'InstanceNumber'
+                tag == "InstanceNumber"
                 and dcmread(
                     file,
-                    specific_tags=['Modality'],
+                    specific_tags=["Modality"],
                     stop_before_pixels=True,
-                ).get('Modality')
-                == 'RTSTRUCT'
+                ).get("Modality")
+                == "RTSTRUCT"
             ):
                 # sometimes the instance number is missing in RTSTRUCT files
-                val = '1'
+                val = "1"
             else:
-                print(f'Unknown tag: {tag} in file: {file}')
+                print(f"No value for tag: {tag} in file: {file}")
 
         mydict[tag] = sanitize_file_name(val) if sanitize else val
 
