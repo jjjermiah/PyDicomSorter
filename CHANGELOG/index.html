@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Jermiah Joseph" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Changelog - My Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Changelog";
+        var mkdocs_page_input_path = "CHANGELOG.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> My Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="" href="../../README.md">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../index.md">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Changelog</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#v0140-2024-05-24">v0.14.0 (2024-05-24)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#feature">Feature</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v0130-2024-05-24">v0.13.0 (2024-05-24)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#chore">Chore</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#feature_1">Feature</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#unknown">Unknown</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v0120-2024-05-23">v0.12.0 (2024-05-23)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#feature_2">Feature</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fix">Fix</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v0110-2024-05-23">v0.11.0 (2024-05-23)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#chore_1">Chore</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#feature_3">Feature</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v0100-2024-05-23">v0.10.0 (2024-05-23)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#chore_2">Chore</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#feature_4">Feature</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v092-2024-05-23">v0.9.2 (2024-05-23)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#chore_3">Chore</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fix_1">Fix</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v091-2024-05-22">v0.9.1 (2024-05-22)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fix_2">Fix</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v090-2024-05-22">v0.9.0 (2024-05-22)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#feature_5">Feature</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fix_3">Fix</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v080-2024-05-22">v0.8.0 (2024-05-22)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#feature_6">Feature</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fix_4">Fix</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v070-2024-05-22">v0.7.0 (2024-05-22)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#feature_7">Feature</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fix_5">Fix</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v061-2024-05-22">v0.6.1 (2024-05-22)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fix_6">Fix</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v060-2024-05-22">v0.6.0 (2024-05-22)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#chore_4">Chore</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ci">Ci</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#feature_8">Feature</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v052-2024-05-21">v0.5.2 (2024-05-21)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fix_7">Fix</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v051-2024-05-21">v0.5.1 (2024-05-21)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#chore_5">Chore</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fix_8">Fix</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#unknown_1">Unknown</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v050-2024-05-21">v0.5.0 (2024-05-21)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#chore_6">Chore</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#feature_9">Feature</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#unknown_2">Unknown</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v041-2024-05-21">v0.4.1 (2024-05-21)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fix_9">Fix</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v040-2024-05-21">v0.4.0 (2024-05-21)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#feature_10">Feature</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v030-2024-05-21">v0.3.0 (2024-05-21)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#feature_11">Feature</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fix_10">Fix</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v020-2024-05-21">v0.2.0 (2024-05-21)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#build">Build</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#feature_12">Feature</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v010-2024-05-21">v0.1.0 (2024-05-21)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#chore_7">Chore</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#feature_13">Feature</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#unknown_3">Unknown</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">My Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Changelog</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/jjjermiah/pydicomsorter/edit/master/docs/CHANGELOG.md">Edit on pydicomsorter</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="changelog">CHANGELOG</h1>
+<h2 id="v0140-2024-05-24">v0.14.0 (2024-05-24)</h2>
+<h3 id="feature">Feature</h3>
+<ul>
+<li>
+<p>feat: Update pydantic-core dependency to version 2.18.2 (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/1bee598f723cb12b3c946850ca48551d7d7238b0"><code>1bee598</code></a>)</p>
+</li>
+<li>
+<p>feat: Add validation for DICOM keys in DICOMSorter</p>
+</li>
+</ul>
+<p>The <code>DICOMSorter</code> class now includes a <code>validate_keys</code> method that validates the keys used for sorting DICOM files. If any invalid keys are found, an error is raised. The method also provides suggestions for closest matches to the invalid keys. This improves the reliability and accuracy of the sorting process. (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/3a80573bce437e82c73c715419bdae8447f6dbd1"><code>3a80573</code></a>)</p>
+<h2 id="v0130-2024-05-24">v0.13.0 (2024-05-24)</h2>
+<h3 id="chore">Chore</h3>
+<ul>
+<li>chore: lock (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/8298ebbebd5112447b62a0e3ed4e5e6d64e62d0a"><code>8298ebb</code></a>)</li>
+</ul>
+<h3 id="feature_1">Feature</h3>
+<ul>
+<li>feat: clean up (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/1be893b84473ac558b4b7a1ff850f6e37f3b7256"><code>1be893b</code></a>)</li>
+</ul>
+<h3 id="unknown">Unknown</h3>
+<ul>
+<li>update precommit (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/1e84963234e13509d801e4701c9bc6159f07ea3f"><code>1e84963</code></a>)</li>
+</ul>
+<h2 id="v0120-2024-05-23">v0.12.0 (2024-05-23)</h2>
+<h3 id="feature_2">Feature</h3>
+<ul>
+<li>feat: add screenshot (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/4d250400ddf05c1f21aceea74b2754a3a3dadcfe"><code>4d25040</code></a>)</li>
+</ul>
+<h3 id="fix">Fix</h3>
+<ul>
+<li>fix: lock (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/0f9a18e14a1a7447ee7f7bc0468b3a97cc36b99d"><code>0f9a18e</code></a>)</li>
+</ul>
+<h2 id="v0110-2024-05-23">v0.11.0 (2024-05-23)</h2>
+<h3 id="chore_1">Chore</h3>
+<ul>
+<li>chore: Update import statement in cli.py (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/3d6a82e229c5a9f24a22f5a8e939f5bbf5308124"><code>3d6a82e</code></a>)</li>
+</ul>
+<h3 id="feature_3">Feature</h3>
+<ul>
+<li>feat: add method fxnality (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/39067a456baee48285a6e9133c101957c2d17944"><code>39067a4</code></a>)</li>
+</ul>
+<h2 id="v0100-2024-05-23">v0.10.0 (2024-05-23)</h2>
+<h3 id="chore_2">Chore</h3>
+<ul>
+<li>
+<p>chore: Update Pixi dependency to v0.8.0 (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/4ac21833fea48486cfcedd21627347068105a57f"><code>4ac2183</code></a>)</p>
+</li>
+<li>
+<p>chore: Update pixi.lock file (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/db31aee45531d69faaa4731401454af525b2bc5a"><code>db31aee</code></a>)</p>
+</li>
+<li>
+<p>chore: Update classifiers in pyproject.toml (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/3d73a968318c76599f3a969f4b565d1281a4939b"><code>3d73a96</code></a>)</p>
+</li>
+</ul>
+<h3 id="feature_4">Feature</h3>
+<ul>
+<li>feat: docs (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/7aca8a8def2fa94952f0b5488433ed35337416e7"><code>7aca8a8</code></a>)</li>
+</ul>
+<h2 id="v092-2024-05-23">v0.9.2 (2024-05-23)</h2>
+<h3 id="chore_3">Chore</h3>
+<ul>
+<li>chore: Update .gitignore and .github/workflows/main.yaml (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/431fe1ac2f4e7fab7d238625a82d4ef3c9a3a691"><code>431fe1a</code></a>)</li>
+</ul>
+<h3 id="fix_1">Fix</h3>
+<ul>
+<li>
+<p>fix: typo (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/b94f9f1266ca840cb832640328de8f5e2d780896"><code>b94f9f1</code></a>)</p>
+</li>
+<li>
+<p>fix: force use the matrix env (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/1e63f36fd1fe2f65e8b7c78dea583156d6490cdc"><code>1e63f36</code></a>)</p>
+</li>
+</ul>
+<h2 id="v091-2024-05-22">v0.9.1 (2024-05-22)</h2>
+<h3 id="fix_2">Fix</h3>
+<ul>
+<li>fix: version variable (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/23843a5902fc7f88e1b69d3ada3ca4b2a2705c45"><code>23843a5</code></a>)</li>
+</ul>
+<h2 id="v090-2024-05-22">v0.9.0 (2024-05-22)</h2>
+<h3 id="feature_5">Feature</h3>
+<ul>
+<li>feat: functioning cli (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/69e5d57da188b1161197a040d04477ebb278eeba"><code>69e5d57</code></a>)</li>
+</ul>
+<h3 id="fix_3">Fix</h3>
+<ul>
+<li>fix: lock (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/ffe0bacd6090a683b20b3b271f9149784b7f5bda"><code>ffe0bac</code></a>)</li>
+</ul>
+<h2 id="v080-2024-05-22">v0.8.0 (2024-05-22)</h2>
+<h3 id="feature_6">Feature</h3>
+<ul>
+<li>feat: add basic cli (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/40fb02bebf887223c7436ec3d3eb0319ca7c2397"><code>40fb02b</code></a>)</li>
+</ul>
+<h3 id="fix_4">Fix</h3>
+<ul>
+<li>fix: lint and format (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/1e8269b69f6513adabb90841c5ce2823ddeeb6b9"><code>1e8269b</code></a>)</li>
+</ul>
+<h2 id="v070-2024-05-22">v0.7.0 (2024-05-22)</h2>
+<h3 id="feature_7">Feature</h3>
+<ul>
+<li>feat: add pixi lock durin gpre-commit (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/a98707490ebd7d5beca515e0ddd8ec56cf223d13"><code>a987074</code></a>)</li>
+</ul>
+<h3 id="fix_5">Fix</h3>
+<ul>
+<li>
+<p>fix: update pre-commit with pixi lock (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/73fbad1a82fb98a27f34fe53a730bd7464435eaf"><code>73fbad1</code></a>)</p>
+</li>
+<li>
+<p>fix: update pre-commit with pixi lock (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/1b0d9112d176342d055aea823e96e51af39492c8"><code>1b0d911</code></a>)</p>
+</li>
+<li>
+<p>fix: update pre-commit with pixi lock (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/71c9aaac7ea0e6c3cc6246a830d0088afa9fd482"><code>71c9aaa</code></a>)</p>
+</li>
+</ul>
+<h2 id="v061-2024-05-22">v0.6.1 (2024-05-22)</h2>
+<h3 id="fix_6">Fix</h3>
+<ul>
+<li>
+<p>fix: lock (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/3bb96126c40d70b82bbffcbd5b3d1a9f12d0c533"><code>3bb9612</code></a>)</p>
+</li>
+<li>
+<p>fix: lock (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/9603cac4749df2bb5a6809961556adb879e8c3a7"><code>9603cac</code></a>)</p>
+</li>
+<li>
+<p>fix: lock (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/503ad7ac8e66eb748c61eaef56a2c8e7d83634db"><code>503ad7a</code></a>)</p>
+</li>
+<li>
+<p>fix: some formatting (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/59d3f2882f95dc3dad21e42abff71f31db20a0cc"><code>59d3f28</code></a>)</p>
+</li>
+</ul>
+<h2 id="v060-2024-05-22">v0.6.0 (2024-05-22)</h2>
+<h3 id="chore_4">Chore</h3>
+<ul>
+<li>chore: Update pydantic-core to version 2.18.2 (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/3934df3bbef2fefde3c704b01f1d73cf8418464e"><code>3934df3</code></a>)</li>
+</ul>
+<h3 id="ci">Ci</h3>
+<ul>
+<li>ci: test on multiple platforms (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/da7f0265c92c2970839208a14a483dd62b6964ee"><code>da7f026</code></a>)</li>
+</ul>
+<h3 id="feature_8">Feature</h3>
+<ul>
+<li>
+<p>feat: add precommit (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/74adc483ce2df8bd06ff3fc34f9fccfa584c80d7"><code>74adc48</code></a>)</p>
+</li>
+<li>
+<p>feat: add precommit (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/2e4ad2cead4ae1b806d38a8e3b7dc90e1245ad49"><code>2e4ad2c</code></a>)</p>
+</li>
+<li>
+<p>feat: add precommit (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/58eee66e1c67fcc111a01dd6b9d57330d5c634c1"><code>58eee66</code></a>)</p>
+</li>
+</ul>
+<h2 id="v052-2024-05-21">v0.5.2 (2024-05-21)</h2>
+<h3 id="fix_7">Fix</h3>
+<ul>
+<li>fix: add linting options (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/122cca187f10d95aceb439be4ff3305e6f187d85"><code>122cca1</code></a>)</li>
+</ul>
+<h2 id="v051-2024-05-21">v0.5.1 (2024-05-21)</h2>
+<h3 id="chore_5">Chore</h3>
+<ul>
+<li>
+<p>chore: Update pre-commit configuration to include src/.*.py$ files (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/74082dc9bcdbed0813da6f14f056a29dbbd0421b"><code>74082dc</code></a>)</p>
+</li>
+<li>
+<p>chore: Update dependencies and add DICOMSorter class (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/640f409859c60bc3bd5294b09a660a8057360198"><code>640f409</code></a>)</p>
+</li>
+</ul>
+<h3 id="fix_8">Fix</h3>
+<ul>
+<li>fix: imports (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/ecb459e0a6963c5d591f160a3d06303ccc043282"><code>ecb459e</code></a>)</li>
+</ul>
+<h3 id="unknown_1">Unknown</h3>
+<ul>
+<li>
+<p>update precommit (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/16b18443cf13eced2c639734cd013bba1bf71d1a"><code>16b1844</code></a>)</p>
+</li>
+<li>
+<p>update precommit (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/879f5c5c6e62cc35c612147012321dead42b8aa7"><code>879f5c5</code></a>)</p>
+</li>
+</ul>
+<h2 id="v050-2024-05-21">v0.5.0 (2024-05-21)</h2>
+<h3 id="chore_6">Chore</h3>
+<ul>
+<li>
+<p>chore: update pre-commit dependency version to &gt;=3.7.1,&lt;3.8 (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/446a5ccfc32a34705f0aa234113db32c6296de13"><code>446a5cc</code></a>)</p>
+</li>
+<li>
+<p>chore: remove unused .pypackage-builder-answers.yml file and update README badges (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/bcd0a599bceeaa38fdd29a241992237077aae7f1"><code>bcd0a59</code></a>)</p>
+</li>
+</ul>
+<h3 id="feature_9">Feature</h3>
+<ul>
+<li>feat: update pre-commit dependency version to &gt;=3.7.1,&lt;3.8 (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/6b572546a57ca0abec71d1500d10d1e769c40cb0"><code>6b57254</code></a>)</li>
+</ul>
+<h3 id="unknown_2">Unknown</h3>
+<ul>
+<li>update precommit (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/69584db9521a65ed4348bd7037e1253cc0742bea"><code>69584db</code></a>)</li>
+</ul>
+<h2 id="v041-2024-05-21">v0.4.1 (2024-05-21)</h2>
+<h3 id="fix_9">Fix</h3>
+<ul>
+<li>
+<p>fix: lock (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/9711580d2decb816113b45d0cb44b4b74c26d8d7"><code>9711580</code></a>)</p>
+</li>
+<li>
+<p>fix: enforce code upload (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/ba93172023f9c56eaac91b5f95270d0330e33d4b"><code>ba93172</code></a>)</p>
+</li>
+</ul>
+<h2 id="v040-2024-05-21">v0.4.0 (2024-05-21)</h2>
+<h3 id="feature_10">Feature</h3>
+<ul>
+<li>
+<p>feat: add codecov badge and fix lock (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/00986a81e0f24c5d67c7c72a29d04888151b2317"><code>00986a8</code></a>)</p>
+</li>
+<li>
+<p>feat: upload to codecov (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/97ac6bbf1b241ed8afd331188f8d3624cbe087dc"><code>97ac6bb</code></a>)</p>
+</li>
+</ul>
+<h2 id="v030-2024-05-21">v0.3.0 (2024-05-21)</h2>
+<h3 id="feature_11">Feature</h3>
+<ul>
+<li>feat: move mkdocs config to a config directory (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/7a7cf35561974c3985dfcadf69568c451539bd5f"><code>7a7cf35</code></a>)</li>
+</ul>
+<h3 id="fix_10">Fix</h3>
+<ul>
+<li>
+<p>fix: docs directory locations (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/72262339b25a85059012ed9570a9c852c3d2d2e7"><code>7226233</code></a>)</p>
+</li>
+<li>
+<p>fix: update lockfile (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/d8b8bb7d2465e7213cfe7b5883104dfcfab6108c"><code>d8b8bb7</code></a>)</p>
+</li>
+<li>
+<p>fix: pypi publish side (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/7171f2646a8782f3bfb00c12cfed841f39c665e6"><code>7171f26</code></a>)</p>
+</li>
+</ul>
+<h2 id="v020-2024-05-21">v0.2.0 (2024-05-21)</h2>
+<h3 id="build">Build</h3>
+<ul>
+<li>build(deps): move 1 file and update 2 files (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/419b8114d10869c8d685dd1a2a505107e030c149"><code>419b811</code></a>)</li>
+</ul>
+<h3 id="feature_12">Feature</h3>
+<ul>
+<li>feat: readme update (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/9a171fec3e9e03ad94871ea38d18f511b417d072"><code>9a171fe</code></a>)</li>
+</ul>
+<h2 id="v010-2024-05-21">v0.1.0 (2024-05-21)</h2>
+<h3 id="chore_7">Chore</h3>
+<ul>
+<li>
+<p>chore: Update ruff.toml with new extend-exclude and extend-include paths (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/1e709c05dce475a963ee278581e8f2a0501b92d4"><code>1e709c0</code></a>)</p>
+</li>
+<li>
+<p>chore: Update .gitignore and remove .vscode/settings.json (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/4f9627f6a40e40d993ba6b2e359b79276bd17605"><code>4f9627f</code></a>)</p>
+</li>
+</ul>
+<h3 id="feature_13">Feature</h3>
+<ul>
+<li>feat: add gha (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/2a97ba3a48d032417279f153d321f476c7464ecf"><code>2a97ba3</code></a>)</li>
+</ul>
+<h3 id="unknown_3">Unknown</h3>
+<ul>
+<li>
+<p>fix (releaserc.toml): introduce semantic-release configuration file to implement a workflow for automated versioning and releases in the project (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/a6d2c95ae8bea865932fb04055804770669edae9"><code>a6d2c95</code></a>)</p>
+</li>
+<li>
+<p>ruff stuff (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/32de36528b34faeb1a8bdc120bcd1f49185ce33d"><code>32de365</code></a>)</p>
+</li>
+<li>
+<p>first commit (<a href="https://github.com/jjjermiah/PyDicomSorter/commit/609571d74df6cf1948ce73dc9de1bae35fc1afd1"><code>609571d</code></a>)</p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../about/" class="btn btn-neutral float-left" title="About"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/jjjermiah/pydicomsorter" class="fa fa-code-fork" style="color: #fcfcfc"> pydicomsorter</a>
+        </span>
+    
+    
+      <span><a href="../about/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
