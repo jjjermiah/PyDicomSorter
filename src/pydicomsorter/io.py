@@ -43,19 +43,6 @@ def truncate_uid(uid: str, last_digits: int = 5) -> str:
     return truncated_uid
 
 
-def read_all(file: Path, tags: list[str]) -> dict[str, str]:
-    """Read all tags from the DICOM file."""
-    try:
-        dicom = dcmread(file, stop_before_pixels=True)
-    except TypeError as te:
-        raise TypeError(f"Type error reading DICOM file: {file}") from te
-    except InvalidDicomError as ide:
-        raise InvalidDicomError(f"Invalid DICOM file: {file}") from ide
-    except ValueError as ve:
-        raise ValueError(f"Value error reading DICOM file: {file}") from ve
-    return {tag: str(dicom.get(tag, "")) for tag in tags}
-
-
 def read_tags(
     file: Path,
     tags: list[str],

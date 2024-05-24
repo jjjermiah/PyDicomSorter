@@ -12,7 +12,7 @@ ALL_TAGS: Final[list[str]] = [value[4] for _, value in DicomDictionary.items()]
 class DICOMSorterOptions(BaseModel):
     """A Pydantic model for the DICOMSorter options."""
 
-    target_pattern: str = '%PatientID/%StudyID-{SeriesID}'
+    target_pattern: str = "%PatientID/%StudyID-{SeriesID}"
     delete_source: bool = False
     symlink: bool = False
     keep_going: bool = False
@@ -24,8 +24,8 @@ class DICOMSorterOptions(BaseModel):
 class DicomKeyHighlighter(RegexHighlighter):
     """Highlight DICOM keys."""
 
-    base_style = 'example.'
+    base_style = "example."
     # i.e in "%(PatientID)s" should highlight "PatientID"
     highlights: ClassVar[list[str]] = [
-        r'%\((?P<DicomTag>[a-zA-Z0-9_]+)\)s',
+        r"%\((?P<DicomTag>[a-zA-Z0-9_]+)\)s",
     ]
