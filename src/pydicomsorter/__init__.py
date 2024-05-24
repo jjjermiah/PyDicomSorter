@@ -3,7 +3,7 @@
 from .cli import cli
 from .io import find_dicom_files
 
-version = '0.14.0'
+version = '0.15.0'
 
 __all__ = [
     'find_dicom_files',

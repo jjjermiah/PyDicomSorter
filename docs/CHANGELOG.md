@@ -2,6 +2,15 @@
 
 
 
+## v0.15.0 (2024-05-24)
+
+### Feature
+
+* feat: Update navigation links in mkdocs.yaml
+
+The navigation links in the `mkdocs.yaml` configuration file have been updated to include a new link to the home page. This ensures that users can easily navigate back to the home page from any other page on the site. ([`228eab6`](https://github.com/jjjermiah/PyDicomSorter/commit/228eab65bdbd9cf3c45961e832ad9c08c26c4a7f))
+
+
 ## v0.14.0 (2024-05-24)
 
 ### Feature
