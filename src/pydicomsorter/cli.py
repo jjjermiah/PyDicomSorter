@@ -4,12 +4,15 @@ import pathlib
 from shutil import copy
 
 import rich_click as click
+from click_plugins import with_plugins
+from pkg_resources import iter_entry_points
 from rich import print, progress
 from rich_click import rich_config
 
 from pydicomsorter.dicomsort import DICOMSorter
 from pydicomsorter.file_list import DICOMFileList
 from pydicomsorter.io import find_dicom_files
+from pydicomsorter.plugins import discovered_plugins, get_plugins, list_plugins
 
 click.rich_click.STYLE_COMMANDS_TABLE_COLUMN_WIDTH_RATIO = (1, 2)
 
@@ -43,7 +46,14 @@ def generate_destination_paths(
     return {k: pathlib.Path(fmt % v).resolve() for k, v in dicom_data.items()}
 
 
-@click.command(context_settings={"help_option_names": ["-h", "--help"]})
+@with_plugins(iter_entry_points(group="pydicomsorter.plugins"))
+@click.group()
+def cli():
+    """Main entry point of the package."""
+    pass
+
+
+@cli.command(context_settings={"help_option_names": ["-h", "--help"]})
 @click.option(
     "--method",
     "-m",
@@ -95,7 +105,7 @@ def generate_destination_paths(
 )
 @click.version_option()
 @rich_config(help_config={"style_option": "bold cyan"})
-def cli(
+def execute(
     sourcedir: pathlib.Path,
     destination_dir: str,
     method: str,
@@ -106,6 +116,7 @@ def cli(
     debug: bool,
 ) -> None:
     """Main function of the package."""
+
     files: list[pathlib.Path] = find_dicom_files(source_dir=sourcedir)
     print(f"Found {len(files)} DICOM files.")
 
