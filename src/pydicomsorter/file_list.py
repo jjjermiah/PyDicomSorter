@@ -3,18 +3,16 @@
 import multiprocessing
 import pathlib
 from functools import partial
-from typing import Dict, List
+from typing import List
 
 from rich import print, progress
 
 from pydicomsorter.io import read_tags as read_tags_func
 
-
 def read_tags_wrapper(
     file: pathlib.Path, tags: List[str]
 ) -> tuple[pathlib.Path, dict[str, str]]:
     """Wrapper function to read tags from a DICOM file."""
-
     return (file, read_tags_func(file, tags))
 
 

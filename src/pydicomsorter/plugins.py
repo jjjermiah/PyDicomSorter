@@ -5,7 +5,7 @@
 # expects the namespace to be `pydicomsorter.plugins`.
 
 from importlib.metadata import EntryPoints, entry_points
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
 discovered_plugins: EntryPoints = entry_points(group="pydicomsorter.plugins")
 

@@ -6,7 +6,6 @@ from pathlib import Path
 from pydicom import dcmread
 from pydicom.errors import InvalidDicomError
 
-
 def find_dicom_files(source_dir: Path) -> list[Path]:
     """Find all DICOM files in the source directory."""
     return [file.resolve() for file in source_dir.glob("**/*.dcm") if file.is_file()]
